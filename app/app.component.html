@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Reactive Forms</h1>
+  <form [formGroup]="registration">
+    {{registration.value | json}}
+    <div class="form-group">
+      <label>Username</label>
+      <input formControlName="username" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input formControlName="password" type="password" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Confirm Password</label>
+      <input type="password" formControlName="cnfrmPassowrd" class="form-control">
+    </div>
+    <div formGroupName="address">
+      <div class="form-group">
+        <label>state</label>
+        <input formControlName="state" type="test" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Country</label>
+        <input type="text" formControlName="country" class="form-control">
+      </div>
+    </div>
+    <button class="btn btn-primary">Sign Up</button> 
+    <button class="btn btn-primary" (click)="loadData()">Load Data</button>
+  </form>
+</div>
